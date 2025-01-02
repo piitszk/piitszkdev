@@ -13,8 +13,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: '[name][extname]', // Arquivos estáticos sem subpastas
-        entryFileNames: '[name].js', // Arquivo de entrada sem subpastas
-        chunkFileNames: '[name].js', // Arquivos de chunk também no mesmo nível
+        // entryFileNames: '[name].js', // Arquivo de entrada sem subpastas
+        // chunkFileNames: '[name].js', // Arquivos de chunk também no mesmo nível
       },
     },
   },
