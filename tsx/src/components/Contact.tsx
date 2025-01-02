@@ -1,6 +1,16 @@
-import { Mail, MessageSquare } from 'lucide-react';
+import { useState } from "react"
+import { Mail, MessageSquare, CheckCircle } from "lucide-react"
 
 export const Contact = () => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("piitszk").then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 3000)
+    })
+  } 
+
   return (
     <section id="contact" className="py-20 select-none">
       <div className="container mx-auto px-6">
@@ -13,7 +23,7 @@ export const Contact = () => {
               <p className="text-zinc-400 mb-8">
                 Interessado em trabalhar junto? Vamos discutir seu projeto e ver como posso ajudar.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="mailto:luan@piitszkdev.com"
@@ -22,15 +32,24 @@ export const Contact = () => {
                   <Mail size={20} />
                   Me envie um email
                 </a>
-                <a
-                  href="https://discord.com/users/piitszk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white transition-colors w-full sm:w-auto justify-center"
+                <button
+                  onClick={handleCopy}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-lg ${
+                    copied ? "bg-green-600" : "bg-zinc-800 hover:bg-zinc-700"
+                  } text-white transition-colors w-full sm:w-auto justify-center`}
                 >
-                  <MessageSquare size={20} />
-                  Discord
-                </a>
+                  {copied ? (
+                    <>
+                      <CheckCircle size={20} />
+                      Copiado!
+                    </>
+                  ) : (
+                    <>
+                      <MessageSquare size={20} />
+                      Discord
+                    </>
+                  )}
+                </button>
               </div>
             </div>
           </div>
