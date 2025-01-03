@@ -9,6 +9,7 @@ export const projects: Project[] = [
     tech: ["Lua","TypeScript","React","MySQL"],
     isOpenSource: false,
     github: "",
+    demo: "pz-pendings"
   },{
     title: "Weather",
     description: "Gerenciamento de clima feito exclusivamente para streamers com intuito de mudar localmente o horário e clima.",
