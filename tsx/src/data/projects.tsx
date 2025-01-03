@@ -25,6 +25,7 @@ export const projects: Project[] = [
     tech: ["Lua","TypeScript","React"],
     isOpenSource: false,
     github: "",
+    demo: "pz-collectibles"
   },{
     title: "Residents",
     description: "Permite aos jogadores gerenciem os residentes de suas próprias residências, adicionando e/ou removendo um novo morador ou pagando as taxas, promovendo maior controle.",
